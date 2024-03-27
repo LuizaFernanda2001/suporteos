@@ -1,4 +1,4 @@
-package com.curso.suporteos.domains;
+package com.curso.domains;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -6,21 +6,24 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.curso.suporteos.domains.enums.PersonType;
+import com.curso.domains.enums.PersonType;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity //declara Person como entidade para o Spring
 @Table(name = "person") //nome da table no banco de dados
 public abstract class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     protected UUID id;
     protected String firstName;
     protected String lastName;
@@ -34,6 +37,9 @@ public abstract class Person {
 
     @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate createdAt = LocalDate.now();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "perfis")
     protected Set<Integer> personType = new HashSet<>();
 
 

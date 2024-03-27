@@ -1,4 +1,4 @@
-package com.curso.suporteos.domains.enums;
+package com.curso.domains.enums;
 
 public enum OrderPriority {
     LOW(0, "ROLE_LOW"), MEDIUM(1, "ROLE_MEDIUM"), HIGH(2, "ROLE_HIGH");

@@ -1,4 +1,4 @@
-package com.curso.suporteos.domains.enums;
+package com.curso.domains.enums;
 
 public enum OrderStatus {
     OPEN(0, "ROLE_OPEN"), PROGRESS(1, "ROLE_PROGRESS"), CLOSED(2, "ROLE_CLOSED");
