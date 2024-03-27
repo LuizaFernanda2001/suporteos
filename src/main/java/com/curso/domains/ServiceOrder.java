@@ -30,10 +30,10 @@ public class ServiceOrder {
     private OrderPriority orderPriority;
     private OrderStatus orderStatus;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "idtechnician")
     private Technician technician;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "iduser")
     private Users user;
 
     public ServiceOrder() {

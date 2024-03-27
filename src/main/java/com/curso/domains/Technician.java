@@ -11,9 +11,9 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tecnician")
+@Table(name = "technician")
 public class Technician extends Person{
-    @OneToMany(mappedBy = "techician")
+    @OneToMany(mappedBy = "technician")
     private List<ServiceOrder> serviceOrders = new ArrayList<>();
 
     public Technician(UUID id, String firstName, String lastName, String cpf, String email, String password) {
