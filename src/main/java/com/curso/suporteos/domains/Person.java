@@ -17,7 +17,7 @@ import com.curso.suporteos.domains.enums.PersonType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity //declara Person como entidade para o Spring
-@Table(name = "person"); //nome da table no banco de dados
+@Table(name = "person") //nome da table no banco de dados
 public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
